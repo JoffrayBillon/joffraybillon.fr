@@ -1,0 +1,50 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -999;
+}
+
+.box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.innerBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 80px;
+  height: 100%;
+}
+
+a,
+button {
+  background: #f6f6f6aa;
+  border: 2px solid #000;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 0.1em;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  outline: none;
+  text-align: center;
+}
