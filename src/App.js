@@ -1,33 +1,33 @@
-import "./styles.css";
-import image1 from "./assets/image1.jpg";
-import image2 from "./assets/image2.jpg";
-import image3 from "./assets/streaming.jpg";
-import image4 from "./assets/pro.jpg";
 import { useState } from "react";
+import { useTransition, animated } from "@react-spring/web";
 
-import { useTransition, animated } from "react-spring";
+import "./App.css";
+
+import image1 from "./assets/lifestyle.jpg";
+import image2 from "./assets/photo.jpg";
+import image3 from "./assets/gaming.jpg";
+import image4 from "./assets/pro.jpg";
 
 export default function App() {
   const [image, setImage] = useState(image1);
-  const changeImage = (image) => {
-    setImage(image);
+  const changeImage = (i) => {
+    setImage(i);
   };
 
-  const transitions = useTransition(image, (image) => image, {
+  const transitions = useTransition(image, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: {
-      duration: 1000
-    }
+      duration: 1000,
+    },
   });
 
   return (
     <div>
-      {transitions.map(({ item, props, key }) => {
+      {transitions((props, item) => {
         return (
           <animated.div
-            key={key}
             className="background"
             style={{ ...props, backgroundImage: `url(${item})` }}
           />
