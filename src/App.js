@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTransition, animated } from "@react-spring/web";
 
 import "./App.css";
@@ -22,6 +22,14 @@ export default function App() {
       duration: 1000,
     },
   });
+
+  useEffect(() => {
+    const pictures = [image1, image2, image3, image4];
+    pictures.forEach((picture) => {
+      const img = new Image();
+      img.src = picture;
+    });
+  }, []);
 
   return (
     <div>
